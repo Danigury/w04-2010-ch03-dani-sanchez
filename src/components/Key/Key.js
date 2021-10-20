@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-function Keyboard({ text, actionOnClick }) {
+function Key({ text, actionOnClick }) {
   return (
     <li>
       <button onClick={actionOnClick}>{text}</button>
@@ -7,9 +7,9 @@ function Keyboard({ text, actionOnClick }) {
   );
 }
 
-export default Keyboard;
+export default Key;
 
-Keyboard.propTypes = {
+Key.propTypes = {
   text: PropTypes.string.isRequired,
   actionOnClick: PropTypes.func.isRequired,
 };
