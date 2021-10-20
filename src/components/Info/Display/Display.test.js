@@ -7,7 +7,7 @@ describe("Given a Display component", () => {
       const number = 7;
       const expectedText = "7";
 
-      render(<Display number={number} />);
+      render(<Display text={number} />);
       const text = screen.getByText(expectedText);
 
       expect(text).toBeInTheDocument();
