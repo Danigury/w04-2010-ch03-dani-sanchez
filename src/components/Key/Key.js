@@ -2,7 +2,12 @@ import PropTypes from "prop-types";
 function Key({ text, actionOnClick }) {
   return (
     <li>
-      <button onClick={actionOnClick}>{text}</button>
+      <button
+        className={text === "DEL" ? "key big" : "key"}
+        onClick={actionOnClick}
+      >
+        {text}
+      </button>
     </li>
   );
 }

@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import Context from "../Context/Context";
 
 function Display({ text }) {
-  return <span className="number">{text}</span>;
+  const clickNumber = useContext(Context);
+  return <span className="number">{clickNumber}</span>;
 }
 
 export default Display;
