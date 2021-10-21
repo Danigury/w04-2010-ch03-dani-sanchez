@@ -12,16 +12,24 @@ function App() {
 
   const numberClickedEvent = (event) => {
     const newNumber = event.target.innerText;
-    newNumber === "delete"
+    newNumber === "DEL"
       ? setClickedNumber([])
       : clickedNumber.length < 9
       ? setClickedNumber([...clickedNumber, newNumber])
       : setClickedNumber([...clickedNumber]);
   };
+
+  const callOnClick = () => {
+    if (clickedNumber.length === 9) {
+      setCalling(!calling);
+    }
+  };
+  const [calling, setCalling] = useState(false);
+
   return (
     <Context.Provider value={clickedNumber}>
       <div className="container">
-        <Info isCalling={true} />
+        <Info isCalling={calling} />
         <main className="phone">
           <div className="keyboard-container">
             <ol className="keyboard">
@@ -36,7 +44,12 @@ function App() {
           </div>
           <div className="actions">
             <Display />
-            <Action onClick={() => {}} />
+            <Action
+              className="actions call active"
+              text="Call"
+              actionOnClick={callOnClick}
+            />
+            <Action className="actions hang" text="Hang" onClick={() => {}} />
           </div>
         </main>
       </div>
