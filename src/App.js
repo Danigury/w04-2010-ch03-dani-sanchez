@@ -29,7 +29,7 @@ function App() {
                 <Key
                   key={index}
                   text={number}
-                  actionOnClick={(e) => numberClickedEvent(e)}
+                  actionOnClick={(event) => numberClickedEvent(event)}
                 />
               ))}
             </ol>
