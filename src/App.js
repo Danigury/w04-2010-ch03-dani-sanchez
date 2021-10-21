@@ -21,9 +21,10 @@ function App() {
 
   const callOnClick = () => {
     if (clickedNumber.length === 9) {
-      setCalling(!calling);
+      setCalling(true);
     }
   };
+
   const [calling, setCalling] = useState(false);
 
   return (
@@ -35,6 +36,7 @@ function App() {
             <ol className="keyboard">
               {keyNumbers.map((number, index) => (
                 <Key
+                  isDisabled={calling}
                   key={index}
                   text={number}
                   actionOnClick={(event) => numberClickedEvent(event)}
@@ -45,9 +47,10 @@ function App() {
           <div className="actions">
             <Display />
             <Action
-              className="actions call active"
+              className="actions call"
               text="Call"
               actionOnClick={callOnClick}
+              calling={calling}
             />
             <Action className="actions hang" text="Hang" onClick={() => {}} />
           </div>
