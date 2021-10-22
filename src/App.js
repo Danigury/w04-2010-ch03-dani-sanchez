@@ -25,6 +25,10 @@ function App() {
     }
   };
 
+  const hangOnClick = () => {
+    window.location.reload(false);
+  };
+
   const [calling, setCalling] = useState(false);
 
   return (
@@ -52,7 +56,11 @@ function App() {
               actionOnClick={callOnClick}
               calling={calling}
             />
-            <Action className="actions hang" text="Hang" onClick={() => {}} />
+            <Action
+              className="actions hang"
+              text="Hang"
+              actionOnClick={hangOnClick}
+            />
           </div>
         </main>
       </div>
